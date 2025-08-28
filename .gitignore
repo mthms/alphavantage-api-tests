@@ -2,6 +2,14 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+allure-report/
+allure-results/
+.allure/
+logs/
+
+### Config files ###
+resources/environments/*
+!resources/environments/*.example
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
