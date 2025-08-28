@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<module name="Checker">
+    <module name="TreeWalker">
+        <!-- Enforce class names start with an uppercase letter and follow camelCase -->
+        <module name="TypeName">
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+        </module>
+
+        <!-- Enforce variable names to follow camelCase -->
+        <module name="LocalVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="MemberName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+    </module>
+    <!-- Ensure there is exactly one newline at the end of the file -->
+    <module name="NewlineAtEndOfFile">
+        <!-- Optional: specify which files to include or exclude -->
+        <property name="fileExtensions" value="java"/>
+    </module>
+    <!-- Prevent more than one consecutive empty line -->
+    <module name="RegexpMultiline">
+        <property name="format" value="^\n{2,}"/>
+        <property name="message" value="Consecutive empty lines are not allowed."/>
+    </module>
+</module>
