@@ -10,6 +10,7 @@ public class ConfigHelper {
     public Configs readConfigs(Configs configs){
         logger.info("Initiating the main configs reading process...");
 
+        logger.info("Finalized reading the main configs successfully.");
         return configs;
     }
 }
