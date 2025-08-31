@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 
 public class BaseTest {
 
-    private static final ThreadLocal<Logger> logger = new ThreadLocal<>();
+    protected static final ThreadLocal<Logger> logger = new ThreadLocal<>();
     protected static final ThreadLocal<Configs> configs = new ThreadLocal<>();
     protected static final ThreadLocal<ConfigHelper> configHelper = new ThreadLocal<>();
     protected static final ThreadLocal<TestData> defaultTestData = new ThreadLocal<>();

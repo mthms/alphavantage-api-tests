@@ -4,7 +4,6 @@ import base.BaseTest;
 import io.qameta.allure.*;
 import net.datafaker.Faker;
 import org.apache.http.HttpStatus;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -26,9 +25,8 @@ public class SearchApiTests extends BaseTest {
                 .body("bestMatches", notNullValue())
                 .body("bestMatches", instanceOf(List.class))
                 .body("bestMatches.size()", greaterThan(0));
-        Reporter.log("Search API responded with 200 status code for valid query"
-                + defaultTestData.get().getSearchKeywords()
-                + " and bestMatches array exists with results", true);
+        logger.get().info("Search API responded with 200 status code for valid query " +
+                "\"{}\" and bestMatches array exists with results", defaultTestData.get().getSearchKeywords());
     }
 
     @Feature("Symbol Search")
@@ -43,8 +41,7 @@ public class SearchApiTests extends BaseTest {
                 .body("bestMatches", notNullValue())
                 .body("bestMatches", instanceOf(List.class))
                 .body("bestMatches.size()", equalTo(0));
-        Reporter.log("Search API responded with 200 status code for InValid query"
-                + defaultTestData.get().getSearchKeywords()
-                + " and bestMatches array exists with 0 results", true);
+        logger.get().info("Search API responded with 200 status code for InValid query \"{}\" " +
+                "and bestMatches array exists with 0 results", defaultTestData.get().getSearchKeywords());
     }
 }

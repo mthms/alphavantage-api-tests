@@ -23,6 +23,7 @@ public class SearchApiClient {
         String mergedKeywords = keywords.stream()
                 .map(String::trim)
                 .collect(Collectors.joining(","));
+        logger.debug("Initiating search for symbols with keywords: {} and function is {}", mergedKeywords, functionName);
 
         // Build and send the request
         return RestAssured
