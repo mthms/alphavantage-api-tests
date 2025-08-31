@@ -1,6 +1,7 @@
 package base;
 
 import com.payrails.helpers.ConfigHelper;
+import com.payrails.helpers.api.clients.SearchApiClient;
 import com.payrails.models.Configs;
 import com.payrails.models.TestData;
 import org.slf4j.Logger;
@@ -19,6 +20,8 @@ public class BaseTest {
     protected static final ThreadLocal<ConfigHelper> configHelper = new ThreadLocal<>();
     protected static final ThreadLocal<TestData> defaultTestData = new ThreadLocal<>();
 
+    protected static final ThreadLocal<SearchApiClient> searchApiClient = new ThreadLocal<>();
+
     @BeforeMethod(alwaysRun = true)
     public void setup(ITestResult result, Method method) {
         Reporter.log("Setup process for test: " + method.getName() + " has started...", true);
@@ -30,5 +33,7 @@ public class BaseTest {
         configHelper.set(new ConfigHelper());
         configs.set(configHelper.get().readConfigs(configs.get()));
         defaultTestData.set(new TestData());
+
+        searchApiClient.set(new SearchApiClient(configs.get()));
     }
 }
