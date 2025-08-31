@@ -75,6 +75,7 @@ jobs:
           sed -i'' \
               -e "s|^alphaVantageBaseUrl=.*|alphaVantageBaseUrl=${{ vars.ALPHAVANTAGE_BASE_URL }}|" \
               -e "s/^alphaVantageApiKey=.*/alphaVantageApiKey=${{ secrets.ALPHAVANTAGE_API_KEY }}/" \
+          resources/environments/config_${{ env.SELECTED_ENV }}.properties
 
       - name: Display modified config file contents
         run: |
