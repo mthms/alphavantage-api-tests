@@ -40,6 +40,10 @@ Before running the project, ensure that you have the following:
 - There is 1 config file. Please, follow the below guide to build them:
     - In the project's terminal on intelliJ, run the below commands:
         - `cp resources/environments/config.properties.example resources/environments/config_testing.properties`
+    - The above command has created a config_testing.properties file in resources/environments folder
+    - Open the newly created file and update the below keys:
+      - baseUrl: The base url of the API
+      - apiKey: Your generated API key to be used in the tests
 
 ## Running the Project
 
