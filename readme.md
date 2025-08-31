@@ -48,7 +48,7 @@ Before running the project, ensure that you have the following:
 - Wait until the maven dependencies are loaded
 - Running an API test:
     - Navigate to the file: src/test/java/api/SearchApiTests.java
-    - Run of the tests from the green play button ▶.
+    - Run any of the tests from the green play button ▶.
     - or by using the below commands to run tests highlighted in the testNG file
       - `mvn test -q -Pdefault-tests -Dmaven.test.failure.ignore=true -Denv=testing`
 
