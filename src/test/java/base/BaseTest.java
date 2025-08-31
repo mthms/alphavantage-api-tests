@@ -2,6 +2,7 @@ package base;
 
 import com.payrails.helpers.ConfigHelper;
 import com.payrails.models.Configs;
+import com.payrails.models.TestData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -16,6 +17,7 @@ public class BaseTest {
     private static final ThreadLocal<Logger> logger = new ThreadLocal<>();
     private static final ThreadLocal<Configs> configs = new ThreadLocal<>();
     private static final ThreadLocal<ConfigHelper> configHelper = new ThreadLocal<>();
+    private static final ThreadLocal<TestData> defaultTestData = new ThreadLocal<>();
 
     @BeforeMethod(alwaysRun = true)
     public void setup(ITestResult result, Method method) {
@@ -27,6 +29,6 @@ public class BaseTest {
         configs.set(new Configs());
         configHelper.set(new ConfigHelper());
         configs.set(configHelper.get().readConfigs(configs.get()));
-
+        defaultTestData.set(new TestData());
     }
 }
