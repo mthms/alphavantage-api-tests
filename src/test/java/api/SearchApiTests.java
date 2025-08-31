@@ -21,6 +21,7 @@ public class SearchApiTests extends BaseTest {
         defaultTestData.get().setSearchKeywords(Arrays.asList("TSLA"));
         searchApiClient.get().searchSymbols(defaultTestData.get().getSearchKeywords())
                 .then()
+                .log().ifValidationFails()
                 .statusCode(HttpStatus.SC_OK)
                 .body("bestMatches", notNullValue())
                 .body("bestMatches", instanceOf(List.class))
@@ -37,6 +38,7 @@ public class SearchApiTests extends BaseTest {
         defaultTestData.get().setSearchKeywords(Arrays.asList(new Faker().lorem().characters(5)));
         searchApiClient.get().searchSymbols(defaultTestData.get().getSearchKeywords())
                 .then()
+                .log().ifValidationFails()
                 .statusCode(HttpStatus.SC_OK)
                 .body("bestMatches", notNullValue())
                 .body("bestMatches", instanceOf(List.class))
