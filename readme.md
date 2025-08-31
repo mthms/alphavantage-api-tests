@@ -56,6 +56,13 @@ Before running the project, ensure that you have the following:
     - or by using the below commands to run tests highlighted in the testNG file
       - `mvn test -q -Pdefault-tests -Dmaven.test.failure.ignore=true -Denv=testing`
 
+## Viewing the allure report generated through workflow
+
+- Download the report as .zip file and extract it
+- Open the extracted folder in terminal/CMD
+- Run the below command to serve the report in your local machine
+  - `http-server -o -c-1`
+
 ## Support
 
 If you encounter any issues or have questions related to the framework or its usage, please reach out.
