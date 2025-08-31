@@ -3,10 +3,10 @@
 <suite name="All Test Suite" parallel="methods" skipfailedinvocationcounts="true" thread-count="22" data-provider-thread-count="10">
     <listeners>
         <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
-        <!--        <listener class-name="helpers.factories.AllureLogListener"/>-->
     </listeners>
     <test name="Smoke Tests">
         <classes>
+            <class name="api.SearchApiTests"/>
         </classes>
     </test>
 </suite>
