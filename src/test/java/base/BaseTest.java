@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.lang.reflect.Method;
@@ -24,10 +25,10 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setup(ITestResult result, Method method) {
-        Reporter.log("Setup process for test: " + method.getName() + " has started...", true);
+        logger.set(LoggerFactory.getLogger("BaseTest.class"));
+        logger.get().info("Setup process for test: {} has started...", method.getName());
         MDC.put("testCase", method.getName());
         MDC.put("threadId", String.valueOf(Thread.currentThread().threadId()));
-        logger.set(LoggerFactory.getLogger("BaseTest.class"));
 
         configs.set(new Configs());
         configHelper.set(new ConfigHelper());
@@ -35,5 +36,23 @@ public class BaseTest {
         defaultTestData.set(new TestData());
 
         searchApiClient.set(new SearchApiClient(configs.get()));
+        logger.get().info("Setup process for test: {} has completed.", method.getName());
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown(ITestResult result, Method method) {
+        if (result.isSuccess())
+            logger.get().info("✅ Test {} has passed.", method.getName());
+        else
+            logger.get().info("❌ Test {} has failed.", method.getName());
+
+        logger.get().info("Teardown process for test: {} is starting...", method.getName());
+
+        MDC.clear();
+        logger.remove();
+        configs.remove();
+        configHelper.remove();
+        defaultTestData.remove();
+        searchApiClient.remove();
     }
 }
