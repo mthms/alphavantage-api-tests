@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 public class SearchApiClient {
     private static final Logger logger = LoggerFactory.getLogger(SearchApiClient.class);
     private final Configs configs;
+    private final String functionName = "SYMBOL_SEARCH";
 
     public SearchApiClient(Configs configs) {
         this.configs = configs;
@@ -26,7 +27,7 @@ public class SearchApiClient {
         // Build and send the request
         return RestAssured
                 .given()
-                .queryParam("function", "SYMBOL_SEARCH")
+                .queryParam("function", functionName)
                 .queryParam("keywords", mergedKeywords)
                 .queryParam("apikey", configs.getAlphaVantageApiKey())
                 .when()
