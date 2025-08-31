@@ -2,11 +2,12 @@ package com.payrails.models;
 
 import io.restassured.path.json.JsonPath;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestData {
     private JsonPath jsonPath;
-    private List<String> searchKeywords;
+    private List<String> searchKeywords = new ArrayList<>();
 
     public JsonPath getJsonPath() {
         return jsonPath;
