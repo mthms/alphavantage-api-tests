@@ -1,6 +1,6 @@
-package com.payrails.helpers;
+package com.alphavantage.helpers;
 
-import com.payrails.models.Configs;
+import com.alphavantage.models.Configs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

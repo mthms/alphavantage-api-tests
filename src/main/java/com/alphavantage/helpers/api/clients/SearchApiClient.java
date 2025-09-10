@@ -1,6 +1,6 @@
-package com.payrails.helpers.api.clients;
+package com.alphavantage.helpers.api.clients;
 
-import com.payrails.models.Configs;
+import com.alphavantage.models.Configs;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.slf4j.Logger;

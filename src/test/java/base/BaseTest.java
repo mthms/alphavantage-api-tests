@@ -1,9 +1,9 @@
 package base;
 
-import com.payrails.helpers.ConfigHelper;
-import com.payrails.helpers.api.clients.SearchApiClient;
-import com.payrails.models.Configs;
-import com.payrails.models.TestData;
+import com.alphavantage.helpers.ConfigHelper;
+import com.alphavantage.helpers.api.clients.SearchApiClient;
+import com.alphavantage.models.Configs;
+import com.alphavantage.models.TestData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;

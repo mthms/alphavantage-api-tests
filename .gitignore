@@ -12,6 +12,7 @@ resources/environments/*
 !resources/environments/*.example
 
 ### IntelliJ IDEA ###
+.idea/
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml

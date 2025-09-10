@@ -1,4 +1,4 @@
-package com.payrails.models;
+package com.alphavantage.models;
 
 public class Configs {
     private String alphaVantageApiKey;

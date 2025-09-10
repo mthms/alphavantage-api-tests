@@ -1,4 +1,4 @@
-package com.payrails.models;
+package com.alphavantage.models;
 
 import io.restassured.path.json.JsonPath;
 
